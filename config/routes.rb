@@ -4,4 +4,5 @@ ProductFront::Application.routes.draw do
   resources :products, only: [:index, :show]
   post '/products/add_to_cart', to: 'line_items#create', as: 'new_line_item'
   get '/cart', to:  'line_items#index', as: 'cart'
+  delete '/cart', to: "line_items#delete", as: 'remove_item_from_cart'
 end
