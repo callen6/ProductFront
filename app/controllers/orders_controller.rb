@@ -8,18 +8,21 @@ class OrdersController < ApplicationController
 		# find total price of items
 		total_amount = cart_items.sum { |item| item.product.price }
 		# create a new order with a total price from line_items
-		order = Order.create(total_price: total_amount)
+		# update order_completed column to true
+		order = Order.create(total_price: total_amount, order_completed: true)
 		# associate those line items with order
 		cart_items.each do |item|
 			item.order = order
 			item.save
 		end
-		# update order_completed column to true
-		order.order_completed = true
 		# redirect somewhere
 		redirect_to :root, notice: "checkout complete"
 	end
 	def index
 		@orders = current_user.orders.complete
 	end
+	def show
+		@order = Order.find(params[:id])
+	end
+
 end
