@@ -3,8 +3,8 @@ class CreateProducts < ActiveRecord::Migration
     create_table :products do |t|
       t.text :name
       t.text :description
-      t.decimal :price
-      t.text :images
+      t.decimal :price, precision: 8, scale: 2
+      t.text :images, array:true, default: []
 
       t.timestamps
     end
