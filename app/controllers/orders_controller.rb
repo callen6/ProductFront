@@ -22,7 +22,7 @@ class OrdersController < ApplicationController
 		@orders = current_user.orders.complete
 	end
 	def show
-		@order = Order.find(params[:id])
+		@order = Order.find(params[:id]) 
 	end
 
 end

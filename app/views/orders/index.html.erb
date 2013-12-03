@@ -1,7 +1,14 @@
 <h1>Your Order History</h1>
 <% @orders.each do |order| %>
-<ul>
-	<li><%= link_to 'past order', order %></li>
-	<li><%= order.total_price %></li>
-</ul>
+<table>
+<tbody>
+<tr>
+	<th>Past Order ID</th>
+	<th>Total Price</th>
+</tr>
+<tr>
+	<td><%= link_to "#{order.id}", order %></td>
+	<td><%= order.total_price %></td>
+</tbody>
+</table>
 <% end %>
