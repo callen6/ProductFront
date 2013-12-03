@@ -5,6 +5,7 @@ class LineItemsController < ApplicationController
 	end
 	def index
 		@line_items = current_user.line_items.in_cart
+		@sum = @line_items.sum { |item| item.product.price }
 	end
 	def delete
 		LineItem.find(params[:line_id]).destroy
