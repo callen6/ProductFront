@@ -6,5 +6,6 @@ class ProductsController < ApplicationController
 	end
 	def show
 		@product  = Product.find(params[:id])
+		@purchases = LineItem.find(:all, conditions: {product_id: params[:id]}).count
 	end
 end

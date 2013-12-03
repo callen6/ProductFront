@@ -2,3 +2,5 @@
 <p><%= @product.description %></p>
 <p><%= number_to_currency(@product.price) %></p>
 <%= button_to "Add to Cart", new_line_item_path(product_id: @product, user_id: current_user) %>
+
+<h2>This product has been bought <%= @purchases %> times</h2>
