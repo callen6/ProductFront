@@ -6,4 +6,5 @@ ProductFront::Application.routes.draw do
   get '/cart', to:  'line_items#index', as: 'cart'
   delete '/cart', to: "line_items#delete", as: 'remove_item_from_cart'
   post '/cart/checkout', to: "orders#create", as: "new_order"
+  get '/order/history', to: "orders#index", as: "order_history"
 end
