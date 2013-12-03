@@ -1,1 +1,4 @@
 <h1>Your Order History</h1>
+<% @orders.each do |order| %>
+	<%= order.total_price %>
+<% end %>

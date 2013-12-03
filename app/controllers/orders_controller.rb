@@ -14,7 +14,12 @@ class OrdersController < ApplicationController
 			item.order = order
 			item.save
 		end
+		# update order_completed column to true
+		order.order_completed = true
 		# redirect somewhere
 		redirect_to :root, notice: "checkout complete"
+	end
+	def index
+		@orders = current_user.orders.complete
 	end
 end
