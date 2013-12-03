@@ -6,4 +6,8 @@ class LineItemsController < ApplicationController
 	def index
 		@line_items = LineItem.all
 	end
+	def delete
+		LineItem.find(params[:id]).destroy
+		redirect_to :cart
+	end
 end
