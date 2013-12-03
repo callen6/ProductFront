@@ -4,7 +4,7 @@ class LineItemsController < ApplicationController
 		redirect_to :cart
 	end
 	def index
-		@line_items = LineItem.all
+		@line_items = current_user.line_items.in_cart
 	end
 	def delete
 		LineItem.find(params[:line_id]).destroy

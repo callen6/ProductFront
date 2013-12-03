@@ -7,6 +7,8 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+<p><%= link_to 'products', products_path %></p>
+<p><%= link_to 'cart', cart_path %></p>
 <p><%= notice %></p>
 <ul><%= render 'shared/login_items' %></ul>
 <%= yield %>
