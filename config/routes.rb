@@ -8,4 +8,5 @@ ProductFront::Application.routes.draw do
   post '/cart/checkout', to: "orders#create", as: "new_order"
   get '/order/history', to: "orders#index", as: "order_history"
   get '/order/history/show/:id', to: "orders#show", as: "order"
+  get '/popular', to: 'line_items#show', as: "popular"
 end
